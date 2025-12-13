@@ -1,0 +1,31 @@
+# Vendor folders
+project1_books/vendor/
+project2_employees/vendor/
+project3_products/vendor/
+temp_ci4/
+
+# Writable folders (keep structure, ignore contents)
+*/writable/cache/*
+*/writable/logs/*
+*/writable/session/*
+*/writable/uploads/*
+!*/writable/.gitkeep
+
+# Database files
+*.db
+
+# Composer
+composer.phar
+
+# Environment
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
