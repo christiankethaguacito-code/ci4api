@@ -2,6 +2,49 @@
 
 Three complete CodeIgniter 4 CRUD applications with RESTful APIs, each with unique themes and functionalities.
 
+## Getting Started
+
+### Requirements
+See `requirements.txt` for a full list of system requirements.
+- PHP >= 8.1
+- Composer
+- MySQL / MariaDB
+
+### Quick Start (Automated)
+
+Each project includes **fully automated setup scripts** that install all required tools:
+
+| Project | Setup Script | Run Script | URL |
+|---------|--------------|------------|-----|
+| Book Library | `project1_books/setup.bat` | `project1_books/run.bat` | http://localhost:8080 |
+| Employee Management | `project2_employees/setup.bat` | `project2_employees/run.bat` | http://localhost:8082 |
+| Product Inventory | `project3_products/setup.bat` | `project3_products/run.bat` | http://localhost:8083 |
+
+**What `setup.bat` does automatically:**
+- ✅ Installs PHP 8.3 (via winget or direct download)
+- ✅ Installs Composer
+- ✅ Detects MySQL (XAMPP/WAMP/standalone) and adds to PATH
+- ✅ Installs project dependencies
+- ✅ Creates `.env` configuration
+- ✅ Sets up the database
+
+**Usage:**
+1. Double-click `setup.bat` (first-time setup only) - Run as Administrator recommended
+2. Double-click `run.bat` to start the server
+3. Restart your terminal after first setup for PATH changes
+
+> **Note:** Tools are installed to `%USERPROFILE%\DevTools`
+
+### Manual Installation
+1.  Clone the repository.
+2.  Navigate to each project folder.
+3.  Run `composer install`.
+4.  Create the database and import the SQL file.
+5.  Configure `.env`.
+6.  Run `php spark serve`.
+
+Detailed instructions are available in each project's `README.md` file.
+
 ## Projects Overview
 
 | # | Project | Theme Color | Database |

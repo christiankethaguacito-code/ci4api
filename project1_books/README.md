@@ -18,30 +18,88 @@ A CodeIgniter 4 CRUD application for managing books with RESTful API support.
 - Secondary: #064e3b
 - Accent: #34d399
 
-## Setup Instructions
+## Quick Start (Automated Setup)
 
-### 1. Database Setup
+For a one-click setup that **automatically installs all required tools**, simply run:
 
-1. Create the database by running the SQL in `database_setup.sql`
-2. Or manually create database: `book_library_db`
+### Windows
 
-### 2. Configuration
+1. **First-time setup:** Double-click `setup.bat` or run:
+   ```cmd
+   setup.bat
+   ```
+   This will automatically:
+   - ✅ Install PHP 8.3 (if not found)
+   - ✅ Install Composer (if not found)
+   - ✅ Detect/configure MySQL (XAMPP, WAMP, or standalone)
+   - ✅ Add all tools to your system PATH
+   - ✅ Install Composer dependencies
+   - ✅ Create the `.env` file
+   - ✅ Set up the database (prompts for MySQL credentials)
 
-Update database credentials in `app/Config/Database.php`:
-```php
-'hostname' => 'localhost',
-'username' => 'root',
-'password' => '',
-'database' => 'book_library_db',
-```
+2. **Run the server:** Double-click `run.bat` or run:
+   ```cmd
+   run.bat
+   ```
 
-### 3. Run the Application
+> **Tip:** Run `setup.bat` as Administrator for best results.
+> 
+> **Note:** Tools are installed to `%USERPROFILE%\DevTools`. Restart your terminal after first setup for PATH changes.
+
+---
+
+## Requirements
+
+Please refer to the `requirements.txt` file in the root directory for a list of necessary software.
+- PHP >= 8.1
+- Composer
+- MySQL / MariaDB
+
+## Manual Installation & Setup
+
+### 1. Install Dependencies
+
+Navigate to the project directory and install the required dependencies using Composer:
 
 ```bash
-php spark serve
+cd project1_books
+composer install
 ```
 
-Visit: http://localhost:8080
+### 2. Database Setup
+
+1.  Open your database management tool (e.g., phpMyAdmin).
+2.  Create a new database named `book_library_db`.
+3.  Import the `database_setup.sql` file located in this project folder.
+
+### 3. Configuration
+
+1.  Rename the `env` file to `.env` (if it exists) or copy it:
+    ```bash
+    cp env .env
+    ```
+2.  Open `.env` and configure your database connection details. Uncomment the lines and set your values:
+    ```ini
+    database.default.hostname = localhost
+    database.default.database = book_library_db
+    database.default.username = root
+    database.default.password = 
+    database.default.DBDriver = MySQLi
+    ```
+3.  Set the environment to development in `.env`:
+    ```ini
+    CI_ENVIRONMENT = development
+    ```
+
+### 4. Run the Application
+
+Start the local development server:
+
+```bash
+php spark serve --port 8080
+```
+
+Visit: [http://localhost:8080](http://localhost:8080)
 
 ## API Endpoints
 

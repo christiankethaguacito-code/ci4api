@@ -20,29 +20,88 @@ A CodeIgniter 4 CRUD application for managing product inventory with RESTful API
 - Secondary: #4c1d95
 - Accent: #a78bfa
 
-## Setup
+## Quick Start (Automated Setup)
 
-### 1. Database
+For a one-click setup that **automatically installs all required tools**, simply run:
 
-Run SQL from `database_setup.sql` or create database: `product_inventory_db`
+### Windows
 
-### 2. Configure
+1. **First-time setup:** Double-click `setup.bat` or run:
+   ```cmd
+   setup.bat
+   ```
+   This will automatically:
+   - ✅ Install PHP 8.3 (if not found)
+   - ✅ Install Composer (if not found)
+   - ✅ Detect/configure MySQL (XAMPP, WAMP, or standalone)
+   - ✅ Add all tools to your system PATH
+   - ✅ Install Composer dependencies
+   - ✅ Create the `.env` file
+   - ✅ Set up the database (prompts for MySQL credentials)
 
-Edit `app/Config/Database.php`:
-```php
-'hostname' => 'localhost',
-'username' => 'root',
-'password' => '',
-'database' => 'product_inventory_db',
-```
+2. **Run the server:** Double-click `run.bat` or run:
+   ```cmd
+   run.bat
+   ```
 
-### 3. Run
+> **Tip:** Run `setup.bat` as Administrator for best results.
+> 
+> **Note:** Tools are installed to `%USERPROFILE%\DevTools`. Restart your terminal after first setup for PATH changes.
+
+---
+
+## Requirements
+
+Please refer to the `requirements.txt` file in the root directory for a list of necessary software.
+- PHP >= 8.1
+- Composer
+- MySQL / MariaDB
+
+## Manual Installation & Setup
+
+### 1. Install Dependencies
+
+Navigate to the project directory and install the required dependencies using Composer:
 
 ```bash
-php spark serve
+cd project3_products
+composer install
 ```
 
-Access: http://localhost:8080
+### 2. Database Setup
+
+1.  Open your database management tool (e.g., phpMyAdmin).
+2.  Create a new database named `product_inventory_db`.
+3.  Import the `database_setup.sql` file located in this project folder.
+
+### 3. Configuration
+
+1.  Rename the `env` file to `.env` (if it exists) or copy it:
+    ```bash
+    cp env .env
+    ```
+2.  Open `.env` and configure your database connection details. Uncomment the lines and set your values:
+    ```ini
+    database.default.hostname = localhost
+    database.default.database = product_inventory_db
+    database.default.username = root
+    database.default.password = 
+    database.default.DBDriver = MySQLi
+    ```
+3.  Set the environment to development in `.env`:
+    ```ini
+    CI_ENVIRONMENT = development
+    ```
+
+### 4. Run the Application
+
+Start the local development server:
+
+```bash
+php spark serve --port 8083
+```
+
+Visit: [http://localhost:8083](http://localhost:8083)
 
 ## API Endpoints
 

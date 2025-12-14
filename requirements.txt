@@ -1,0 +1,5 @@
+PHP >= 8.1
+Composer
+MySQL or MariaDB
+Git
+CodeIgniter 4 Framework (installed via Composer)
