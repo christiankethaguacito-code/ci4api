@@ -17,8 +17,8 @@
             --primary-light: #fbbf24;
             --accent: #fcd34d;
             --text-white: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
+            --text-muted: #cbd5e1;
+            --border-color: #475569;
             --success: #22c55e;
             --danger: #ef4444;
         }
@@ -109,6 +109,28 @@
             width: 24px;
             text-align: center;
             font-size: 1.1rem;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-white) !important;
+        }
+
+        .nav-link {
+            color: var(--text-muted) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
         }
 
         /* Main Content */
@@ -238,6 +260,26 @@
         .table {
             color: var(--text-white);
             margin: 0;
+            --bs-table-color: var(--text-white);
+            --bs-table-bg: transparent;
+            --bs-table-border-color: var(--border-color);
+        }
+
+        .table td, .table th {
+            color: var(--text-white);
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--primary-light);
         }
 
         .table thead th {
@@ -468,152 +510,3 @@
     <!-- Main Content -->
     <div class="main-content">
         <main>
-
-            margin-bottom: 30px;
-            border-bottom: 3px solid var(--accent-color);
-            backdrop-filter: blur(10px);
-        }
-
-        .form-control, .form-select {
-            border-radius: 10px;
-            padding: 12px 16px;
-            border: 2px solid #fde68a;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus, .form-select:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 4px rgba(217, 119, 6, 0.15);
-        }
-
-        .input-group-text {
-            background: var(--bg-light);
-            border: 2px solid #fde68a;
-            border-right: none;
-            border-radius: 10px 0 0 10px;
-            color: var(--primary-color);
-        }
-
-        .input-group .form-control {
-            border-radius: 0 10px 10px 0;
-        }
-
-        .alert {
-            border-radius: 12px;
-            border: none;
-            padding: 16px 20px;
-            font-weight: 500;
-        }
-
-        .alert-success {
-            background: linear-gradient(135deg, #fef3c7, #fffbeb);
-            color: var(--secondary-color);
-        }
-
-        .action-btn {
-            padding: 8px 12px;
-            margin: 2px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-
-        .action-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .btn-info {
-            background: linear-gradient(135deg, #0ea5e9, #0284c7);
-            border: none;
-            color: white;
-        }
-
-        .btn-warning {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
-            border: none;
-            color: white;
-        }
-
-        .btn-danger {
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            border: none;
-        }
-
-        footer {
-            background: var(--gradient);
-            color: white;
-            padding: 25px 0;
-            margin-top: 60px;
-        }
-
-        .empty-box {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .empty-box i {
-            font-size: 5rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 25px;
-        }
-
-        .stats-card {
-            background: var(--gradient);
-            color: white;
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .stats-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stats-card h3 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .card, .alert, .page-title {
-            animation: fadeInUp 0.5s ease forwards;
-        }
-
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #fef3c7; }
-        ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
-    </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="/employees">
-                <i class="fas fa-users-cog me-2"></i>HR System
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/employees"><i class="fas fa-users me-1"></i>Employees</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/employees/create"><i class="fas fa-user-plus me-1"></i>Add New</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/api/employees" target="_blank"><i class="fas fa-code me-1"></i>API</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container py-4">

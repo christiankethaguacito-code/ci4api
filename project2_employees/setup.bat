@@ -101,7 +101,7 @@ if %errorlevel% neq 0 (
             :: Create composer.bat
             (
                 echo @echo off
-                echo "%PHP_PATH%\php.exe" "%COMPOSER_PATH%\composer.phar" %%*
+                echo php "%COMPOSER_PATH%\composer.phar" %%*
             ) > "%COMPOSER_PATH%\composer.bat"
             echo [OK] Composer installed.
         ) else (
@@ -179,7 +179,7 @@ cd /d "%PROJECT_DIR%"
 
 :: Use the installed PHP and Composer
 if exist "%COMPOSER_PATH%\composer.phar" (
-    "%PHP_PATH%\php.exe" "%COMPOSER_PATH%\composer.phar" install --no-interaction
+    php "%COMPOSER_PATH%\composer.phar" install --no-interaction
 ) else (
     call composer install --no-interaction
 )
